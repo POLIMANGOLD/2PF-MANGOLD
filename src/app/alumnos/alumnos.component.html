@@ -6,13 +6,17 @@
      </mat-icon>
      Agragar Alumno
   </button>
-
+ <div> {{horaActual$|async| json}}</div>
 
 </div>
+
+
+
 
 <table mat-table [dataSource]="dataSource"> 
 
 
+ 
      <!-- Position Column -->
   <ng-container matColumnDef="nombreCompleto">
     <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>

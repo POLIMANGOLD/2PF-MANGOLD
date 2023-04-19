@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { AbmAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { AlumnosServiciosService } from '../servicios/alumnos-servicios.service';
+import { TimeService, Time } from '../servicios/time.service';
+import { Observable } from 'rxjs';
 
 
 export interface Alumnos {
@@ -17,34 +20,21 @@ export interface Alumnos {
   styleUrls: ['./alumnos.component.scss']
 })
 export class AlumnosComponent {
-alumno: Alumnos[] =[
-  {
-    nombre: "Paula",
-    apellido: "Mangold",
-    curso: 1,
-    carrera: "Administracion"
-  },
 
-  {
-    nombre: "Marcos",
-    apellido: "Aguirre",
-    curso: 2,
-    carrera: "Contador"
-  },
 
-  {
-    nombre: "Juan",
-    apellido: "Perez",
-    curso: 3,
-    carrera: "Abogado"
-  }
-]
-
-dataSource= new MatTableDataSource (this.alumno)
+dataSource= new MatTableDataSource <Alumnos>
 
 displayedColumns: string [] = ["nombreCompleto", "curso", "carrera"]
 
-constructor ( private matDialog: MatDialog){}
+horaActual$: Observable <String>;
+
+constructor ( private matDialog: MatDialog,
+  private alumnosService: AlumnosServiciosService,
+  private timeService: TimeService){
+    this.alumnosService.obtenerAlumno
+    .subscribe ((Alumnos) => {this.dataSource.data = Alumnos})
+    this.horaActual$ = this.timeService.reloj; 
+  }
 
 abrirAlumno (): void{
 const dialog = this.matDialog.open ( AbmAlumnosComponent)

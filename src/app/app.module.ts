@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarModule } from './toolbar/toolbar.module';
+import { AlumnosModule } from './alumnos/alumnos.module';
 
 
 @NgModule({
@@ -16,7 +17,10 @@ import { ToolbarModule } from './toolbar/toolbar.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToolbarModule
+    ToolbarModule,
+    AlumnosModule
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
