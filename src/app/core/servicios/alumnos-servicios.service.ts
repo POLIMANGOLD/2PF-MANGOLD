@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Alumnos } from '../alumnos/alumnos.component';
+import { Alumnos } from '../../alumnos/alumnos.component';
 
 
 @Injectable({
@@ -9,6 +9,7 @@ import { Alumnos } from '../alumnos/alumnos.component';
 export class AlumnosServiciosService {
   private alumnos$ = new BehaviorSubject([
     {
+      id: 1,
       nombre: "Paula",
       apellido: "Mangold",
       curso: 1,
@@ -16,6 +17,7 @@ export class AlumnosServiciosService {
     },
   
     {
+      id: 2,
       nombre: "Marcos",
       apellido: "Aguirre",
       curso: 2,
@@ -23,6 +25,7 @@ export class AlumnosServiciosService {
     },
   
     {
+      id: 3,
       nombre: "Juan",
       apellido: "Perez",
       curso: 3,

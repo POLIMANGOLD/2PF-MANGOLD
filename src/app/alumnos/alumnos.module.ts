@@ -9,8 +9,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { PipesModule } from '../pipes/pipes.module';
-import { DirectivasModule } from '../directivas/directivas.module';
+import { SharedModule } from '../shared/shared.module';
+import { PipesModule } from "../shared/pipes/pipes.module";
+import { DirectivasModule } from '../shared/directivas/directivas.module';
+import { AlumnosDetalleComponent } from './pages/alumnos-detalle/alumnos-detalle.component';
 
 
 
@@ -18,26 +20,26 @@ import { DirectivasModule } from '../directivas/directivas.module';
 
 
 @NgModule({
-  declarations: [
-    AlumnosComponent,
-    AbmAlumnosComponent
-  ],
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    PipesModule,
-    DirectivasModule,
-
-  ],
-
-  exports:[
-    AlumnosComponent
-  ] 
+    declarations: [
+        AlumnosComponent,
+        AbmAlumnosComponent,
+        AlumnosDetalleComponent
+    ],
+    exports: [
+        AlumnosComponent
+    ],
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        SharedModule,
+        PipesModule,
+        DirectivasModule,
+    ]
 })
 export class AlumnosModule { }
